@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
@@ -66,8 +66,4 @@ app.delete('/todos/:id', (req, res) => {
     const id = parseInt(req.params.id);
     todos = todos.filter((t) => t.id !== id);
     res.json( { message: 'Todo deleted successfully' });
-});
-
-app.listen(port, () => {
-    console.log('Server is listening at http://localhost:${port}');
 });
